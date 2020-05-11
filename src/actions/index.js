@@ -6,6 +6,6 @@ export const fetchPosts = () => {
   return async (dispatch) => {
     const response = await jsonPlaceholder.get('./posts');
     /* This returns an *object*, which is okay since we're using thunk, but we need to manuually call dispatch here. */
-    dispatch({ type: 'FETCH_POSTS', payload: response});  
+    dispatch({ type: 'FETCH_POSTS', payload: response.data});  
   }
 };
